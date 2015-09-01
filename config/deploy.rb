@@ -3,7 +3,7 @@ lock '3.4.0'
 set :application, 'test_project_fe'
 set :repo_url, 'git@github.com:pawelrosa/test_project_fe.git'
 
-set :linked_files, %w{config/database.yml config/secrets.yml config/application.yml}
+set :linked_files, %w{config/database.yml config/application.yml}
 set :linked_dirs, %w{log public/system}
 
 set :rvm_ruby_version, '2.2.2@test_project_fe'
