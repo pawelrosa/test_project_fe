@@ -57,7 +57,6 @@ pickle-email-*.html
 /public/uploads
 .capistrano/metrics
 /config/database.yml
-/config/secrets.yml
 
 # Ignore application configuration
 /config/application.yml
