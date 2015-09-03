@@ -1,0 +1,32 @@
+.sort-box {
+  margin-top: 11px;
+}
+
+.sort-box__label,
+.sort-box__button {
+  display: inline-block;
+  font-size: 13px;
+  line-height: 15px;
+}
+
+.sort-box__label {
+  font-family: $serif;
+  font-style: italic;
+  margin-left: 8px;
+  margin-right: 8px;
+
+  &:first-child {
+    margin-left: 0;
+  }
+}
+
+.sort-box__button {
+  font-family: $sans;
+  color: $text-blue;
+  cursor: pointer;
+}
+
+.sort-box__button--active {
+  color: $text-light;
+  border-bottom: 1px solid $text-light;
+}

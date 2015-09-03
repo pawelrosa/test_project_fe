@@ -1,0 +1,19 @@
+.page-header {
+  background: white;
+  box-shadow: 0 0 3px 3px #fbfbfb;
+  height: 155px;
+  padding-top: 50px;
+}
+
+.page-title {
+  color: $text-color;
+  display: inline-block;
+  font: 700 26px/1 $sans;
+  margin: 0;
+  text-transform: uppercase;
+
+  & + .add-question-btn {
+    margin-left: 26px;
+  }
+}
+

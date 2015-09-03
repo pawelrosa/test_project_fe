@@ -1,0 +1,26 @@
+.search-box {
+  padding-top: 20px;
+}
+
+.search-box__input,
+.search-box__button {
+  display: block;
+  float: left;
+  font: 14px/15px $sans;
+  height: 35px;
+  padding: 8px 16px;
+  width: 100%;
+}
+.search-box__input {
+  background: #fbfbfb;
+  border: 1px solid #eeeeee;
+  color: $text-color;
+}
+
+.search-box__button {
+  background: transparent;
+  border: 1px solid $text-light;
+  color: $text-light;
+  text-align: center;
+  text-transform: uppercase;
+}

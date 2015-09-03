@@ -1,9 +1,9 @@
-//@import "vars/colors";
-//@import "vars/bootstrap";
+@import "vars/colors";
+@import "vars/typography";
 //@import "vars/boxmodel2";
 
-@import "bootstrap-sprockets";
-@import "vendors/bootstrap";
+//@import "bootstrap-sprockets";
+//@import "vendors/bootstrap";
 @import "bourbon";
 @import "boxmodel2";
 
@@ -18,7 +18,7 @@
 @import "layout/navigation";
 @import "layout/header";
 @import "layout/footer";
-@import "layout/sections";
+@import "layout/containers";
 @import "layout/sidebar";
 @import "layout/forms";
 
@@ -33,6 +33,9 @@
 @import "components/panels";
 @import "components/tabs";
 @import "components/tooltips";
+@import "components/search-box";
+@import "components/filter-box";
+@import "components/sort-box";
 
 //@import "pages/home";
 //@import "pages/contact";

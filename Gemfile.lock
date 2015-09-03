@@ -24,6 +24,7 @@ GIT
 
 GEM
   remote: https://rubygems.org/
+  remote: https://rails-assets.org/
   specs:
     actionmailer (4.2.4)
       actionpack (= 4.2.4)
@@ -62,6 +63,10 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    angular-rails-templates (0.1.4)
+      railties (>= 3.1)
+      sprockets
+      tilt
     api_smith (1.3.0)
       hashie (>= 1.0, < 3.0)
       httparty
@@ -206,6 +211,13 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.2.4)
       sprockets-rails
+    rails-assets-angular (1.4.5)
+    rails-assets-angular-animate (1.4.5)
+      rails-assets-angular (= 1.4.5)
+    rails-assets-angular-ui-router (0.2.15)
+      rails-assets-angular (>= 1.0.8)
+    rails-assets-momentjs (2.10.6)
+    rails-assets-underscore (1.8.3)
     rails-deprecated_sanitizer (1.0.3)
       activesupport (>= 4.2.0.alpha)
     rails-dom-testing (1.0.7)
@@ -304,6 +316,7 @@ PLATFORMS
 DEPENDENCIES
   active_model_serializers
   activeadmin!
+  angular-rails-templates
   autoprefixer-rails
   bootstrap-sass
   bourbon
@@ -325,6 +338,11 @@ DEPENDENCIES
   puma
   quiet_assets
   rails (= 4.2.4)
+  rails-assets-angular!
+  rails-assets-angular-animate!
+  rails-assets-angular-ui-router!
+  rails-assets-momentjs!
+  rails-assets-underscore!
   rocket_pants (~> 1.0)
   rspec-rails
   sass-rails (~> 5.0)

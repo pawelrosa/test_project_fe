@@ -1,0 +1,18 @@
+.filter-box {
+  margin-top: 11px;
+}
+
+.filter-box__label {
+  font-size: 13px;
+  line-height: 15px;
+  margin-left: 26px;
+  vertical-align: baseline;
+
+  &:first-child {
+    margin-left: 0;
+  }
+}
+
+.filter-box__radio {
+  margin-right: 8px;
+}

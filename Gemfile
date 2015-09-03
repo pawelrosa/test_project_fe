@@ -17,6 +17,16 @@ gem 'devise'
 gem 'rocket_pants', '~> 1.0'
 gem 'active_model_serializers'
 
+# assets
+source 'https://rails-assets.org' do
+  gem 'rails-assets-angular'
+  gem 'rails-assets-angular-ui-router'
+  gem 'rails-assets-angular-animate'
+  gem 'rails-assets-underscore'
+  gem 'rails-assets-momentjs'
+end
+gem 'angular-rails-templates'
+
 # js
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'

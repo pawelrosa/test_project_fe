@@ -1,0 +1,32 @@
+header.page-header
+  .container
+    .row
+      .col-w.clear
+        .pull-left
+          h1.page-title
+            | Questions
+          a.add-question-btn add
+        form.filter-box.pull-right
+          label.filter-box__label
+            input.filter-box__radio type="radio" name="questionsFilter" value="my_shelf" checked=""
+            | My shelf
+          label.filter-box__label
+            input.filter-box__radio type="radio" name="questionsFilter" value="all"
+            | All questions
+      .col-n.clearfix
+        .sort-box.pull-right
+          .sort-box__label
+            | Sort by:
+          a.sort-box__button.sort-box__button--active
+            | recent
+          .sort-box__label
+            | or
+          a.sort-box__button
+            | hot
+    form.search-box.row
+      .col-w
+        input.search-box__input type="text" placeholder="Search questions"
+      .col-n
+        button.search-box__button type="submit"
+          | Search
+
