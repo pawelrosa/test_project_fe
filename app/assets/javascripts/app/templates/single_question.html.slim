@@ -1,0 +1,44 @@
+.page.single-question
+  header.page-header
+    a.back-button ui-sref="questions"
+    .container.clearfix
+      .pull-left
+        h1.page-title
+          | Question
+        a.add-question-btn.add-button
+      .last-time-activity.pull-right.mobile-hidden
+        | Last time discussed
+        span.number
+          | 1
+        | day ago
+  .page-body
+    .container
+      .question.n-p-b.m-b-40
+        .question-header.row
+          .col-w
+            img.question-avatar ng-src="{{ question.author.avatar.thumb }}"
+            .question-author
+              span.name
+                | {{ question.author.name }}
+              span.activity
+                | is asking:
+            a.question-head ui-sref="question({id: question.id})"
+              | {{ question.head }}
+          .question-header-sidebar.col-n
+            a.follow-button
+              | follow
+        .question-main
+          .question-content.row
+            .col-w
+              .question-body
+                | {{ question.body }}
+            .col-n
+              a.follow-button.mobile-visible
+                | follow
+              .votes
+                .votes-value ng-bind-html="question.votes | votesFilter"
+                .votes-buttons
+                  a.votes-caret.up ng-click="upvote(question)"
+                  a.votes-caret.down ng-click="downvote(question)"
+          a.button.activity-button
+            | GIVE new answer

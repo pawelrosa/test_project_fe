@@ -1,0 +1,18 @@
+.last-time-activity {
+  color: $text-color;
+  font: 700 italic 14px/1 $serif;
+  margin-top: 6px;
+  
+  .number {
+    font-family: $sans;
+    font-style: normal;
+    margin: 0 15px;
+  }
+}
+
+.activity-button {
+  bottom: -16px;
+  left: 50%;
+  margin-left: -90px;
+  position: absolute;
+}

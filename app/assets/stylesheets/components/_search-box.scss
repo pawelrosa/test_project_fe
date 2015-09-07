@@ -23,4 +23,15 @@
   color: $text-light;
   text-align: center;
   text-transform: uppercase;
+
+  &:hover {
+    background: $text-light;
+    color: white;
+  }
+}
+
+@media screen and (max-width: $mobile-max) {
+  .search-box__input {
+    margin-bottom: 10px;
+  }
 }

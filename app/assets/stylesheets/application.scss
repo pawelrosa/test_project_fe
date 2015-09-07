@@ -1,6 +1,7 @@
 @import "vars/colors";
 @import "vars/typography";
-//@import "vars/boxmodel2";
+@import "vars/breakpoints";
+@import "vars/boxmodel2";
 
 //@import "bootstrap-sprockets";
 //@import "vendors/bootstrap";
@@ -17,6 +18,7 @@
 
 @import "layout/navigation";
 @import "layout/header";
+@import "layout/body";
 @import "layout/footer";
 @import "layout/containers";
 @import "layout/sidebar";
@@ -24,7 +26,7 @@
 
 @import "components/alerts";
 @import "components/badges";
-@import "components/breadcrumbs";
+@import "components/votes";
 @import "components/buttons";
 @import "components/dropdowns";
 @import "components/labels";
@@ -36,9 +38,10 @@
 @import "components/search-box";
 @import "components/filter-box";
 @import "components/sort-box";
+@import "components/question";
 
-//@import "pages/home";
-//@import "pages/contact";
+@import "pages/all_questions";
+@import "pages/single_question";
 
 //@import "themes/theme";
 

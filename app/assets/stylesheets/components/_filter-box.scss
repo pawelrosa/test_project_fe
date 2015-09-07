@@ -16,3 +16,9 @@
 .filter-box__radio {
   margin-right: 8px;
 }
+
+@media screen and (max-width: $mobile-max) {
+  .filter-box {
+    clear: both;
+  }
+}

@@ -1,32 +1,80 @@
-header.page-header
-  .container
-    .row
-      .col-w.clear
-        .pull-left
-          h1.page-title
-            | Questions
-          a.add-question-btn add
-        form.filter-box.pull-right
-          label.filter-box__label
-            input.filter-box__radio type="radio" name="questionsFilter" value="my_shelf" checked=""
-            | My shelf
-          label.filter-box__label
-            input.filter-box__radio type="radio" name="questionsFilter" value="all"
-            | All questions
-      .col-n.clearfix
-        .sort-box.pull-right
-          .sort-box__label
-            | Sort by:
-          a.sort-box__button.sort-box__button--active
-            | recent
-          .sort-box__label
-            | or
-          a.sort-box__button
-            | hot
-    form.search-box.row
-      .col-w
-        input.search-box__input type="text" placeholder="Search questions"
-      .col-n
-        button.search-box__button type="submit"
-          | Search
+.page.all-questions
+  header.page-header
+    .container
+      .row
+        .col-w
+          .pull-left
+            h1.page-title
+              | Questions
+            a.add-question-btn.add-button
+          form.filter-box.pull-right
+            label.filter-box__label
+              input.filter-box__radio type="radio" name="questionsFilter" value="my_shelf" checked=""
+              | My shelf
+            label.filter-box__label
+              input.filter-box__radio type="radio" name="questionsFilter" value="all"
+              | All questions
+        .col-n.clearfix
+          .sort-box.pull-right
+            .sort-box__label
+              | Sort by:
+            a.sort-box__button ng-class="{'sort-box__button--active': orderProp == '-created_at'}" ng-click="order('-created_at')"
+              | recent
+            .sort-box__label
+              | or
+            a.sort-box__button ng-class="{'sort-box__button--active': orderProp == '-votes'}" ng-click="order('-votes')"
+              | hot
+      form.search-box.row
+        .col-w
+          input.search-box__input type="text" placeholder="Search questions"
+        .col-n
+          button.search-box__button type="submit"
+            | Search
+  .page-body
+    .container
+      .question ng-repeat="question in questions | orderBy: orderProp"
+        .row
+          .question-header-wrapper.col-w
+            .question-header
+              img.question-avatar ng-src="{{ question.author.avatar.thumb }}"
+              .question-author
+                span.name
+                  | {{ question.author.name }}
+                span.activity
+                  | is asking:
+              a.question-head ui-sref="question({id: question.id})"
+                | {{ question.head }}
+        .row
+          .question-main-wrapper.col-w
+            .question-main
+              .question-sidebar.mobile-hidden
+                .question-activity-type
+                  | Asked
+              .question-content
+                .question-activities
+                  .question-activity.more
+                    .question-activity-counter
+                      | 3
+                    .question-activity-type
+                      | more
+                      br
+                      | activities
+                  .question-activity
+                    img.question-avatar ng-src="{{ question.author.avatar.thumb }}"
+                    .question-activity-type
+                      | Answered
+                  .question-activity.answered
+                    img.question-avatar ng-src="{{ question.author.avatar.thumb }}"
+                    .question-activity-type
+                      | Answered
+          .question-stats-wrapper.col-n
+            .question-stats
+              .stat
+                | 1 related discussions
+              .stat
+                | 6 peers involved
+              .stat
+                | 3 conversations
+      .load-more-bar
+        a.load-more-button load more questions
 

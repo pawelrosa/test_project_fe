@@ -2,6 +2,10 @@
   @include box-sizing(border-box);
 }
 
+body {
+  background: $bg-color;
+}
+
 .pull-left {
   float: left;
 }
@@ -12,25 +16,102 @@
 
 .container {
   margin: 0 auto;
-  width: 800px;
 }
 
 .row {
-  margin-left: -10px;
-  margin-right: -10px;
   @include clearfix;
 }
 
 [class^="col-"],
 [class*="col-"] {
   float: left;
-  padding: 0 10px;
+  min-height: 1px;
 }
 
 .col-w {
+  padding-right: 10px;
   width: 75%;
 }
 
 .col-n {
+  padding-left: 10px;
   width: 25%;
 }
+
+@media screen and (max-width: $mobile-max) {
+  .tablet-visible,
+  .desktop-visible {
+    display: none !important;
+  }
+
+  .mobile-visible {
+    display: block !important;
+  }
+
+  .tablet-hidden,
+  .desktop-hidden {
+    display: block !important;
+  }
+
+  .mobile-hidden {
+    display: none !important;
+  }
+
+  [class^="col-"],
+  [class*="col-"] {
+    width: 100%;
+  }
+
+  .col-w {
+    padding-right: 0;
+  }
+
+  .col-n {
+    padding-left: 0;
+  }
+}
+
+@media screen and (min-width: $tablet-min) and (max-width: $tablet-max) {
+  .mobile-visible,
+  .desktop-visible {
+    display: none !important;
+  }
+
+  .tablet-visible {
+    display: block !important;
+  }
+
+  .mobile-hidden,
+  .desktop-hidden {
+    display: block !important;
+  }
+
+  .tablet-hidden {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: $desktop-min) {
+  .container {
+    width: 800px;
+  }
+
+  .mobile-visible,
+  .tablet-visible {
+    display: none !important;
+  }
+
+  .desktop-visible {
+    display: block !important;
+  }
+
+  .mobile-hidden,
+  .tablet-hidden {
+    display: block !important;
+  }
+
+  .desktop-hidden {
+    display: none !important;
+  }
+}
+

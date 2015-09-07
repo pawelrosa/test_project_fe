@@ -1,0 +1,39 @@
+.votes {
+  display: inline-block;
+  margin-top: 15px;
+}
+
+.votes-value {
+  color: $text-color;
+  display: inline-block;
+  float: left;
+  font: 700 italic 14px/20px $serif;
+  margin: 6px 8px 0 0;
+  min-width: 100px;
+
+  .number {
+    font-family: $sans;
+    font-style: normal;
+    margin-right: 8px;
+  }
+}
+
+.votes-buttons {
+  float: left;
+}
+
+.votes-caret {
+  background: image-url('caret.png') no-repeat;
+  display: block;
+  height: 10px;
+  width: 10px;
+
+  &.up {
+    background-position: 0 0;
+    margin-bottom: 13px;
+  }
+
+  &.down {
+    background-position: 0 -23px;
+  }
+}

@@ -214,6 +214,8 @@ GEM
     rails-assets-angular (1.4.5)
     rails-assets-angular-animate (1.4.5)
       rails-assets-angular (= 1.4.5)
+    rails-assets-angular-resource (1.4.5)
+      rails-assets-angular (= 1.4.5)
     rails-assets-angular-ui-router (0.2.15)
       rails-assets-angular (>= 1.0.8)
     rails-assets-momentjs (2.10.6)
@@ -340,6 +342,7 @@ DEPENDENCIES
   rails (= 4.2.4)
   rails-assets-angular!
   rails-assets-angular-animate!
+  rails-assets-angular-resource!
   rails-assets-angular-ui-router!
   rails-assets-momentjs!
   rails-assets-underscore!

@@ -1,13 +1,19 @@
 @app = angular.module('app', [
-  'ui.router'
+  'ui.router',
+  'ngResource'
 ])
 
 @app.config ($stateProvider, $urlRouterProvider) ->
-  $urlRouterProvider.otherwise '/'
+  $urlRouterProvider.otherwise '/questions'
   $stateProvider
-  .state('root', {
-      url: '/',
+  .state('questions', {
+      url: '/questions',
       controller: 'AllQuestionsCtrl',
       templateUrl: '/assets/app/templates/all_questions.html'
+    })
+  .state('question', {
+      url: '/questions/:id',
+      controller: 'SingleQuestionCtrl',
+      templateUrl: '/assets/app/templates/single_question.html'
     })
 

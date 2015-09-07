@@ -1,8 +1,13 @@
 .page-header {
   background: white;
-  box-shadow: 0 0 3px 3px #fbfbfb;
-  height: 155px;
-  padding-top: 50px;
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.1);
+  padding: 50px 0;
+  position: relative;
+  z-index: 1;
+
+  .page.all-questions & {
+    padding-bottom: 20px;
+  }
 }
 
 .page-title {
@@ -14,6 +19,36 @@
 
   & + .add-question-btn {
     margin-left: 26px;
+  }
+}
+
+@media screen and (max-width: $mobile-max) {
+  .page-header {
+    padding: 15px 10px;
+  }
+
+  .page-title {
+
+    .page.single-question & {
+      margin-left: 60px;
+    }
+
+    & + .add-question-btn {
+      margin-left: 0;
+      position: absolute;
+      right: 10px;
+      top: 15px;
+    }
+  }
+}
+
+@media screen and (min-width: $tablet-min) and (max-width: $tablet-max) {
+  .page-header {
+    padding: 40px 20px;
+  }
+
+  .page.single-question .page-title {
+    margin-left: 110px;
   }
 }
 

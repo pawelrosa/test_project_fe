@@ -1,8 +1,16 @@
 'use strict'
 
-@app.controller('AllQuestionsCtrl', ['$scope', ($scope) ->
-  $scope.questions = [
-    { "head": "head 1", "body": "Body 1"},
-    { "head": "head 2", "body": "Body 2"}
-  ]
+@app.controller('AllQuestionsCtrl', ['$scope', 'Question', ($scope, Question) ->
+  $scope.orderProp = '-created_at'
+
+  Question.get().$promise.then(
+    (data) ->
+      $scope.questions = data.response
+    ,
+    (error) -> console.log 'error', error
+  )
+
+  $scope.order = (orderProp) ->
+    $scope.orderProp = orderProp
+
 ])

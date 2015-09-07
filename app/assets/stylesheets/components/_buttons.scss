@@ -1,0 +1,71 @@
+$duration: 400ms;
+
+a {
+  text-decoration: none;
+}
+
+a,
+button,
+input[type="submit"] {
+  cursor: pointer;
+  @include transition(color $duration, background-color $duration);
+}
+
+.back-button {
+  background: image-url('back_button.png') 50% 50% no-repeat;
+  height: 42px;
+  left: 1%;
+  margin-top: -21px;
+  position: absolute;
+  top: 50%;
+  width: 42px;
+}
+
+.add-button {
+  display: inline-block;
+  background: image-url('add_button.png') 50% 50% no-repeat;
+  height: 26px;
+  width: 26px;
+}
+
+.follow-button {
+  color: $text-blue;
+  font: 700 14px/20px $sans;
+
+  &:hover {
+    color: lighten($text-blue, 15%);
+  }
+}
+
+.button {
+  background: white;
+  border: 1px solid #e5e5e5;
+  color: $text-color;
+  display: inline-block;
+  font: 700 14px/20px $sans;
+  height: 32px;
+  min-width: 180px;
+  padding: 5px 10px;
+  text-align: center;
+
+  &:hover {
+    background: #e5e5e5;
+  }
+}
+
+@media screen and (max-width: $mobile-max) {
+
+  .back-button {
+    background-size: 26px 26px;
+    height: 26px;
+    left: 10px;
+    margin-top: -13px;
+    width: 26px;
+  }
+}
+
+@media screen and (min-width: $tablet-min) and (max-width: $tablet-max) {
+  .back-button {
+    left: 20px;
+  }
+}

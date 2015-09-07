@@ -1,0 +1,12 @@
+@app.factory('Question', ['$resource', ($resource) ->
+  $resource '/api/1/questions/:id', { id: '@id' },
+    update:
+      method: 'PUT'
+    reviews:
+      method: 'GET'
+      params:
+        reviews_only: true
+      isArray: true
+
+
+])
