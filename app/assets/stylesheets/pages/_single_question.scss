@@ -16,3 +16,14 @@
   margin-left: -90px;
   position: absolute;
 }
+
+.answers-counter {
+  font: 400 italic 14px/20px $serif;
+  margin: 20px 0;
+  text-align: center;
+
+  .number {
+    font: 700 normal 18px/20px $sans;
+    margin-right: 12px;
+  }
+}

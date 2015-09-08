@@ -9,16 +9,24 @@
     (error) -> console.log 'error', error
   )
 
-  $scope.upvote = (question) ->
-    console.log('upvote', question.id)
-    $http.put("/api/1/questions/#{question.id}/upvote")
+  $scope.upvote = (item, itemType, parent={}) ->
+    url = "/api/1/questions/#{$stateParams.id}/"
+    switch itemType
+      when 'Question' then url += "upvote"
+      when 'Answer' then url += "answers/#{item.id}/upvote"
+      when 'Comment' then url += "answers/#{parent.id}/comments/#{item.id}/upvote"
+    $http.put(url)
       .success (data) -> $scope.question = data.response
       .error (error) -> console.log 'error', error
 
-  $scope.downvote = (question) ->
-    console.log('downvote', question.id)
-    $http.put("/api/1/questions/#{question.id}/downvote")
-      .success (data) -> $scope.question = data.response
-      .error (error) -> console.log 'error', error
+  $scope.downvote = (item, itemType, parent={}) ->
+    url = "/api/1/questions/#{$stateParams.id}/"
+    switch itemType
+      when 'Question' then url += "downvote"
+      when 'Answer' then url += "answers/#{item.id}/downvote"
+      when 'Comment' then url += "answers/#{parent.id}/comments/#{item.id}/downvote"
+    $http.put(url)
+    .success (data) -> $scope.question = data.response
+    .error (error) -> console.log 'error', error
 
 ])

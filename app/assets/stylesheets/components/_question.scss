@@ -1,7 +1,9 @@
 .question {
   background: white;
   border-bottom: 1px solid #e5e5e5;
+  box-shadow: 3px 0 3px 0 rgba(0, 0, 0, 0.1);
   padding-bottom: 30px;
+  position: relative;
 }
 
 .question-header {
@@ -63,6 +65,10 @@
 
 .question-main {
   background: $bg-blue;
+
+  .votes {
+    margin-top: 15px;
+  }
 }
 
 .question-content {

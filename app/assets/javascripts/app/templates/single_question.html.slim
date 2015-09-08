@@ -11,7 +11,7 @@
         span.number
           | 1
         | day ago
-  .page-body
+  .page-body.p-b-10
     .container
       .question.n-p-b.m-b-40
         .question-header.row
@@ -32,13 +32,59 @@
             .col-w
               .question-body
                 | {{ question.body }}
-            .col-n
+            .votes-wrapper.col-n
               a.follow-button.mobile-visible
                 | follow
               .votes
                 .votes-value ng-bind-html="question.votes | votesFilter"
                 .votes-buttons
-                  a.votes-caret.up ng-click="upvote(question)"
-                  a.votes-caret.down ng-click="downvote(question)"
+                  a.votes-caret.up ng-click="upvote(question, 'Question')"
+                  a.votes-caret.down ng-click="downvote(question, 'Question')"
           a.button.activity-button
             | GIVE new answer
+      .answers-counter
+        span.number
+          | {{ question.answers.length }}
+        | peers already answered {{ question.author.name }}
+      .answer ng-repeat="answer in question.answers"
+        .answer-container
+          img.answer-avatar ng-src="{{ answer.author.avatar.thumb }}"
+          .answer-header
+            .answer-author-name
+              | {{ answer.author.name }}
+            .answer-activity-type
+              | Answered
+            .answer-activity-time
+              | yesterday
+          .answer-main.row
+            .col-w
+              .answer-body
+                | {{ answer.body }}
+            .votes-wrapper.col-n
+              .votes
+                .votes-value ng-bind-html="answer.votes | votesFilter"
+                .votes-buttons
+                  a.votes-caret.up ng-click="upvote(answer, 'Answer')"
+                  a.votes-caret.down ng-click="downvote(answer, 'Answer')"
+        .answer.comment ng-repeat="comment in answer.comments"
+          .answer-container
+            img.answer-avatar ng-src="{{ comment.author.avatar.thumb }}"
+            .answer-header
+              .answer-author-name
+                | {{ comment.author.name }}
+              .answer-activity-type
+                | Commented it
+              .answer-activity-time
+                | yesterday
+            .answer-main.row
+              .col-w
+                .answer-body
+                  | {{ comment.body }}
+              .votes-wrapper.col-n
+                .votes
+                  .votes-value ng-bind-html="comment.votes | votesFilter"
+                  .votes-buttons
+                    a.votes-caret.up ng-click="upvote(comment, 'Comment', answer)"
+                    a.votes-caret.down ng-click="downvote(comment, 'Comment', answer)"
+        a.button.activity-button
+          | {{ answer.comments.length > 0 ? 'CONTINUE discussion' : 'COMMENT' }}
