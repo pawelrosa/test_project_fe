@@ -9,11 +9,11 @@
   .state('questions', {
       url: '/questions',
       controller: 'AllQuestionsCtrl',
-      templateUrl: '/assets/app/templates/all_questions.html'
+      templateUrl: "<%= asset_path('app/templates/all_questions.html') %>"
     })
   .state('question', {
       url: '/questions/:id',
       controller: 'SingleQuestionCtrl',
-      templateUrl: '/assets/app/templates/single_question.html'
+      templateUrl: "<%= asset_path('app/templates/single_question.html') %>"
     })
 
