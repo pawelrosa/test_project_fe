@@ -1,0 +1,47 @@
+.modal-overlay {
+  background: rgba(0, 0, 0, 0.75);
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 999;
+}
+
+.modal {
+  background: white;
+  left: 50%;
+  margin-left: -420px;
+  position: absolute;
+  top: 50px;
+  width: 840px;
+}
+
+.modal-close-button {
+  background: image-url('cross.png');
+  cursor: pointer;
+  height: 10px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 10px;
+}
+
+@media screen and (max-width: $mobile-max) {
+  .modal {
+    left: 0;
+    margin-left: 0;
+    top: 0;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: $tablet-min) and (max-width: $tablet-max) {
+
+  .modal {
+    left: 0;
+    margin-left: 0;
+    width: 100%;
+  }
+}

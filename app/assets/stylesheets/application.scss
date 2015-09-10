@@ -3,8 +3,6 @@
 @import "vars/breakpoints";
 @import "vars/boxmodel2";
 
-//@import "bootstrap-sprockets";
-//@import "vendors/bootstrap";
 @import "bourbon";
 @import "boxmodel2";
 
@@ -24,17 +22,9 @@
 @import "layout/sidebar";
 @import "layout/forms";
 
-@import "components/alerts";
-@import "components/badges";
 @import "components/votes";
 @import "components/buttons";
-@import "components/dropdowns";
-@import "components/labels";
 @import "components/modals";
-@import "components/pagination";
-@import "components/panels";
-@import "components/tabs";
-@import "components/tooltips";
 @import "components/search-box";
 @import "components/filter-box";
 @import "components/sort-box";
@@ -43,7 +33,6 @@
 
 @import "pages/all_questions";
 @import "pages/single_question";
-
-//@import "themes/theme";
+@import "pages/user";
 
 @import "shame";

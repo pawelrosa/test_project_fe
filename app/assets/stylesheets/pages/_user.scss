@@ -1,0 +1,381 @@
+.nav-arrow {
+  background: image-url('nav_arrows.png') no-repeat;
+  height: 30px;
+  width: 30px;
+
+  &.left {
+    background-position: 0 -30px;
+
+    &:hover {
+      background-position: 0 0;
+    }
+  }
+
+  &.right {
+    background-position: -30px -30px;
+
+    &:hover {
+      background-position: -30px 0;
+    }
+  }
+}
+
+.mark {
+  background: image-url('mark.png') 0 -25px;
+  display: inline-block;
+  height: 25px;
+  margin-left: 8px;
+  vertical-align: top;
+  width: 18px;
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &.on {
+    background-position: 0 0;
+  }
+}
+
+.title {
+  font: 400 36px/1 $serif;
+  margin: 10px 0 40px;
+}
+
+.subtitle {
+  font: 400 14px/20px $sans;
+  color: $text-light;
+  margin-right: 8px;
+  text-transform: uppercase;
+}
+
+.stat-card {
+  display: inline-block;
+  height: 90px;
+  margin: 10px;
+  position: relative;
+  width: 90px;
+
+  .card,
+  .stat {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  .card {
+    background: $bg-blue;
+
+    &.card-1 {
+      @include transform(rotate(-40deg));
+    }
+
+    &.card-2 {
+      @include transform(rotate(-20deg));
+    }
+
+    &.card-3 {
+      @include transform(rotate(-30deg));
+    }
+
+    &.card-4 {
+      @include transform(rotate(10deg));
+    }
+  }
+
+  .stat {
+    @include align-items(center);
+    @include display(flex);
+    @include flex-direction(row);
+    @include justify-content(center);
+
+    .value {
+      font: 700 18px/24px $sans;
+      margin-bottom: 10px;
+    }
+
+    .label {
+      font: italic 14px/20px $serif;
+    }
+  }
+}
+
+.user-stats {
+  @include align-items(flex-start);
+  @include display(flex);
+  @include flex-direction(row);
+  @include justify-content(space-between);
+}
+
+.user-stat {
+
+  .label,
+  .value {
+    display: inline-block;
+  }
+}
+
+.user-container {
+  margin: 0 auto;
+  width: 600px;
+}
+
+.user-header {
+  border-bottom: 1px solid $text-color;
+  padding: 50px 0 30px;
+  text-align: center;
+
+  .user-stat {
+    font-size: 14px;
+    line-height: 20px;
+
+    .label,
+    .value {
+      display: inline-block
+    }
+
+    .label {
+      color: $text-light;
+      margin-right: 8px;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.user-avatar {
+  border-radius: 50%;
+  display: inline-block;
+  width: 85px;
+}
+
+.user-name {
+  color: $text-blue;
+  font: 700 18px/24px $sans;
+  margin: 15px 0;
+}
+
+.user-body {
+  text-align: center;
+
+  .user-container {
+    padding: 10px 0;
+    position: relative;
+  }
+
+  .nav-arrow {
+    position: absolute;
+    top: 20px;
+
+    &.left {
+      left: 0;
+    }
+
+    &.right {
+      right: 0;
+    }
+  }
+}
+
+.user-other {
+
+  display: inline-block;
+  margin: 5px;
+  vertical-align: top;
+  width: 90px;
+
+  .user-avatar-wrapper {
+    background: image-url('pattern.png');
+    padding: 20px;
+  }
+
+  .user-avatar {
+    width: 50px;
+  }
+
+  .user-name {
+    font-size: 14px;
+    line-height: 20px;
+    margin: 10px 0;
+  }
+}
+
+
+
+
+.user-hottest-discussion {
+  background: image-url('pattern.png');
+  margin: 50px 0 25px;
+
+  .user-avatar {
+    margin-top: -45px;
+    width: 50px;
+  }
+
+  .user-name,
+  .user-activity {
+    display: inline-block;
+    line-height: 20px;
+    margin: 0;
+  }
+
+  .user-name {
+    font-size: 14px;
+    margin-right: 8px;
+  }
+
+  .user-activity {
+    font-size: 11px;
+    color: $text-light;
+    text-transform: uppercase;
+  }
+
+  .user-article-title {
+    color: $text-blue;
+    font: italic 20px/26px $serif;
+  }
+
+  .user-stat {
+
+    .value {
+      font: 700 normal 18px/20px $sans;
+      margin-right: 8px;
+    }
+
+    .label {
+      font: 400 italic 14px/20px $serif;
+    }
+  }
+}
+
+@media screen and (max-width: $mobile-max) {
+
+  .user-stats {
+    @include align-items(none);
+    @include display(block);
+    @include flex-direction(none);
+    @include justify-content(none);
+  }
+
+  .user-container {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: auto;
+  }
+
+  .user-header {
+    padding-bottom: 10px;
+    padding-top: 20px;
+
+    .user-avatar {
+      width: 50px;
+    }
+
+    .user-name {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    .user-stat {
+      margin-bottom: 10px;
+
+      .label,
+      .value {
+        display: block;
+      }
+
+      .label {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .mark {
+    margin-top: 5px;
+  }
+
+  .title {
+    font-size: 22px;
+    line-height: 28px;
+    margin: 0 50px 10px;
+  }
+
+  .subtitle {
+    font-size: 12px;
+    line-height: 16px;
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+  .nav-arrow {
+    background-size: 40px 40px;
+    height: 20px;
+    width: 20px;
+
+    &.left {
+      background-position: 0 -20px;
+
+      &:hover {
+        background-position: 0 0;
+      }
+    }
+
+    &.right {
+      background-position: -20px -20px;
+
+      &:hover {
+        background-position: -20px 0;
+      }
+    }
+  }
+
+  .user-body {
+
+    .nav-arrow {
+      top: 15px;
+    }
+  }
+
+  .stat-card {
+    margin: 0 10px;
+
+    .stat {
+
+      .value {
+        font-size: 20px;
+        line-height: 26px;
+        margin-bottom: 10px;
+      }
+
+      .label {
+        font: italic 14px/20px $serif;
+      }
+    }
+  }
+
+  .user-hottest-discussion {
+    margin-bottom: 0;
+
+    .user-article-title {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    .user-stat {
+      display: inline-block;
+      text-align: left;
+      padding: 5px;
+      width: 50%;
+    }
+  }
+}
+
+@media screen and (min-width: $tablet-min) and (max-width: $tablet-max) {
+
+  .user-container {
+    margin-left: 40px;
+    margin-right: 40px;
+    width: auto;
+  }
+}

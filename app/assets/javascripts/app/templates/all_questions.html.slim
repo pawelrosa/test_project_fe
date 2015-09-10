@@ -36,7 +36,8 @@
         .row
           .question-header-wrapper.col-w
             .question-header
-              img.question-avatar ng-src="{{ question.author.avatar.thumb }}"
+              a ui-sref="user({id: question.author.id})"
+                img.question-avatar ng-src="{{ question.author.avatar.thumb }}"
               .question-author
                 span.name
                   | {{ question.author.name }}
@@ -52,28 +53,41 @@
                   | Asked
               .question-content
                 .question-activities
-                  .question-activity.more
+                  .question-activity.more ng-if="question.activities.length > 5"
                     .question-activity-counter
-                      | 3
+                      span.desktop-visible
+                        | {{ question.activities.length - 4 }}
+                      span.tablet-visible
+                        | {{ question.activities.length - 2 }}
+                      span.mobile-visible
+                        | {{ question.activities.length - 1 }}
                     .question-activity-type
                       | more
                       br
                       | activities
-                  .question-activity
-                    img.question-avatar ng-src="{{ question.author.avatar.thumb }}"
-                    .question-activity-type
-                      | Answered
-                  .question-activity.answered
-                    img.question-avatar ng-src="{{ question.author.avatar.thumb }}"
-                    .question-activity-type
-                      | Answered
+                  .question-activities-wrapper
+                    .question-activity.box ng-repeat="activity in question.activities | limitTo: 5" ng-class="{ 'answered': activity.type == 'Answered'}" ng-hide="question.activities.length > 5 && $index >= 4"
+                      a ui-sref="user({id: activity.author.id})" title="{{ activity.author.name }}"
+                        img.question-avatar ng-src="{{ activity.author.avatar.thumb }}"
+                      .question-activity-type
+                        | {{ activity.type }}
+
           .question-stats-wrapper.col-n
             .question-stats
               .stat
-                | 1 related discussions
+                .value
+                  | {{ question.stats.related_discussions }}
+                .label
+                  | related discussions
               .stat
-                | 6 peers involved
+                .value
+                  | {{ question.stats.peers_involved }}
+                .label
+                  | peers involved
               .stat
-                | 3 conversations
+                .value
+                  | {{ question.stats.conversations }}
+                .label
+                  | conversations
       .load-more-bar ng-if="more > 0"
         a.load-more-button ng-click="loadMoreQuestions()" load more questions

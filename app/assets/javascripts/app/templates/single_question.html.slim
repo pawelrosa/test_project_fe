@@ -16,7 +16,8 @@
       .question.n-p-b.m-b-40
         .question-header.row
           .col-w
-            img.question-avatar ng-src="{{ question.author.avatar.thumb }}"
+            a ui-sref="user({id: question.author.id})"
+              img.question-avatar ng-src="{{ question.author.avatar.thumb }}"
             .question-author
               span.name
                 | {{ question.author.name }}
@@ -48,7 +49,8 @@
         | peers already answered {{ question.author.name }}
       .answer ng-repeat="answer in question.answers"
         .answer-container
-          img.answer-avatar ng-src="{{ answer.author.avatar.thumb }}"
+          a ui-sref="user({id: answer.author.id})"
+            img.answer-avatar ng-src="{{ answer.author.avatar.thumb }}"
           .answer-header
             .answer-author-name
               | {{ answer.author.name }}
@@ -68,7 +70,8 @@
                   a.votes-caret.down ng-click="downvote(answer, 'Answer')"
         .answer.comment ng-repeat="comment in answer.comments"
           .answer-container
-            img.answer-avatar ng-src="{{ comment.author.avatar.thumb }}"
+            a ui-sref="user({id: comment.author.id})"
+              img.answer-avatar ng-src="{{ comment.author.avatar.thumb }}"
             .answer-header
               .answer-author-name
                 | {{ comment.author.name }}

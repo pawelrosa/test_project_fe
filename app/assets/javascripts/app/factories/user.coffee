@@ -1,5 +1,5 @@
-@app.factory('Question', ['$resource', ($resource) ->
-  $resource '/api/1/questions/:id', { id: '@id' },
+@app.factory('User', ['$resource', ($resource) ->
+  $resource '/api/1/users/:id', { id: '@id' },
     update:
       method: 'PUT'
     reviews:

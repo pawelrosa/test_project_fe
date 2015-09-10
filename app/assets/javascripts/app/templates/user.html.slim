@@ -1,0 +1,121 @@
+.modal-overlay
+  .modal
+    a.modal-close-button ui-sref="questions"
+    .user-container
+      .user-header
+        img.user-avatar ng-src="{{ user.avatar.normal }}"
+        h1.user-name
+          | {{ user.name }}
+        .user-stats
+          .user-stat
+            .label
+              | Member for
+            .value
+              | 5 months
+          .user-stat
+            .label
+              | Last seen
+            .value
+              | Saturday afternoon
+          .user-stat
+            .label
+              | Activity level
+            .value
+              .mark.on
+              .mark.on
+              .mark
+    .user-body
+      .user-container
+        a.nav-arrow.left
+        a.nav-arrow.right
+        h2.title
+          | How it all started
+
+        h3.subtitle
+          | That's where we have been these 5 months ago
+        .m-b-50.m-t-40
+          .stat-card
+            .card.card-1
+            .stat
+              .wrapper
+                .value
+                  | 46
+                .label
+                  | peers
+          .stat-card
+            .card.card-2
+            .stat
+              .wrapper
+                .value
+                  | 26
+                .label
+                  | peers
+          .stat-card
+            .card.card-3
+            .stat
+              .wrapper
+                .value
+                  | 19
+                .label
+                  | findings
+          .stat-card
+            .card.card-4
+            .stat
+              .wrapper
+                .value
+                  | 10
+                .label
+                  | questions
+
+        h3.subtitle
+          | Who joined the platform that same period
+        .user-other
+          .user-avatar-wrapper
+            img.user-avatar src="/samples/avatar2.png"
+          .user-name
+            | Ron Hopkins
+        .user-other
+          .user-avatar-wrapper
+            img.user-avatar src="/samples/avatar3.png"
+          .user-name
+            | Mike
+        .user-other
+          .user-avatar-wrapper
+            img.user-avatar src="/samples/avatar4.png"
+          .user-name
+            | John Smith
+
+      h3.subtitle.m-b-30
+        | The hottest discussion these days
+      .user-hottest-discussion
+        .user-container
+          img.user-avatar src="/samples/avatar1.png"
+          .m-t-20.m-b-5
+            .user-name
+              | Andrew
+            .user-activity
+              | Found the guardian article
+          .m-b-30
+            .user-article-title
+              | Vegan diet to stop diabetes progress
+          .user-stats.m-b-20
+            .user-stat
+              .value
+                | 6
+              .label
+                | peers involved
+            .user-stat
+              .value
+                | 3
+              .label
+                | related discussion
+            .user-stat
+              .value
+                | 3
+              .label
+                | conversations
+            .user-stat
+              .value
+                | 19
+              .label
+                | upvotes

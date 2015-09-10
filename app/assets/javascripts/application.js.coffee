@@ -3,9 +3,10 @@
 #= require angular
 #= require angular-ui-router
 #= require angular-resource
-#= require app/app.coffee
+#= require app/app
 #= require_tree ./app/factories
 #= require_tree ./app/filters
+#= require_tree ./app/directives
 #= require_tree ./app/controllers
 
 

@@ -16,6 +16,7 @@ Rails.application.routes.draw do
           end
         end
       end
+      resources :users, except: [:edit, :update, :delete]
     end
   end
 

@@ -1,0 +1,20 @@
+@app = angular.module('app', [
+    'ui.router',
+    'ngResource'
+])
+
+@app.config ($stateProvider, $urlRouterProvider) ->
+    $urlRouterProvider.otherwise '/questions'
+    $stateProvider
+    .state 'questions',
+        url: '/questions'
+        controller: 'AllQuestionsCtrl'
+        templateUrl: "<%= asset_path('app/templates/all_questions.html') %>"
+    .state 'question',
+        url: '/questions/:id',
+        controller: 'SingleQuestionCtrl',
+        templateUrl: "<%= asset_path('app/templates/single_question.html') %>"
+    .state 'user',
+        url: '/users/:id'
+        templateUrl: "<%= asset_path('app/templates/user.html') %>"
+        controller: 'UserCtrl'
