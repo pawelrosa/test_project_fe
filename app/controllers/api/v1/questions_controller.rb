@@ -2,7 +2,7 @@ class Api::V1::QuestionsController < Api::V1::BaseController
   before_action :fetch_question, except: :index
 
   def index
-    @questions = Question.limit(params[:limit] || 1)
+    @questions = Question.limit(params[:limit] || 1).order(created_at: :desc)
     expose @questions, each_serializer: QuestionSerializer, metadata: { more: Question.all.count - @questions.size }
   end
 
