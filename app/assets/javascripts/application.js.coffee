@@ -3,6 +3,8 @@
 #= require angular
 #= require angular-ui-router
 #= require angular-resource
+#= require angular-ui-bootstrap-bower
+#= require angular-ui-bootstrap-bower/ui-bootstrap-tpls
 #= require app/app
 #= require_tree ./app/factories
 #= require_tree ./app/filters

@@ -1,6 +1,6 @@
 .modal-overlay
   .modal
-    a.modal-close-button ui-sref="questions"
+    a.modal-close-button ng-click="dismiss()"
     .user-container
       .user-header
         img.user-avatar ng-src="{{ user.avatar.normal }}"

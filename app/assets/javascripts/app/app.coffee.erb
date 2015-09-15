@@ -1,6 +1,7 @@
 @app = angular.module('app', [
     'ui.router',
-    'ngResource'
+    'ngResource',
+    'ui.bootstrap'
 ])
 
 @app.config ($stateProvider, $urlRouterProvider) ->
@@ -8,13 +9,22 @@
     $stateProvider
     .state 'questions',
         url: '/questions'
-        controller: 'AllQuestionsCtrl'
         templateUrl: "<%= asset_path('app/templates/all_questions.html') %>"
+        controller: 'AllQuestionsCtrl'
     .state 'question',
         url: '/questions/:id',
         controller: 'SingleQuestionCtrl',
         templateUrl: "<%= asset_path('app/templates/single_question.html') %>"
     .state 'user',
         url: '/users/:id'
-        templateUrl: "<%= asset_path('app/templates/user.html') %>"
-        controller: 'UserCtrl'
+        parent: 'questions'
+        onEnter: ['$modal', '$state', ($modal, $state) ->
+            $modal.open
+                templateUrl: "<%= asset_path('app/templates/user.html') %>"
+                controller: 'UserCtrl'
+            .result.finally ->
+                $state.go 'questions'
+        ]
+
+
+

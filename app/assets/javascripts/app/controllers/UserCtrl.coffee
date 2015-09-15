@@ -8,4 +8,6 @@
   ,
     (error) -> console.log 'error', error
   )
+
+  $scope.dismiss = -> $scope.$dismiss()
 ])
