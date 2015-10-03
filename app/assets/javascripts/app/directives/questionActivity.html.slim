@@ -1,0 +1,5 @@
+.question-activity.box
+  a ui-sref="user({id: activity.author.id})" title="{{ activity.author.name }}"
+    img.question-avatar ng-src="{{ activity.author.avatar.thumb }}"
+  .question-activity-type
+    | {{ activity.type }}

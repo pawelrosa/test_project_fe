@@ -66,11 +66,7 @@
                       br
                       | activities
                   .question-activities-wrapper
-                    .question-activity.box ng-repeat="activity in question.activities | limitTo: 5" ng-class="{ 'answered': activity.type == 'Answered'}" ng-hide="question.activities.length > 5 && $index >= 4"
-                      a ui-sref="user({id: activity.author.id})" title="{{ activity.author.name }}"
-                        img.question-avatar ng-src="{{ activity.author.avatar.thumb }}"
-                      .question-activity-type
-                        | {{ activity.type }}
+                    question-activity ng-repeat="activity in question.activities | limitTo: 5" ng-class="{ 'answered': activity.type == 'Answered'}" ng-hide="question.activities.length > 5 && $index >= 4"
 
           .question-stats-wrapper.col-n
             .question-stats
