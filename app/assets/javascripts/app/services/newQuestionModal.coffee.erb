@@ -1,0 +1,10 @@
+'use strict'
+
+@app.service 'newQuestionModal', ['$modal', 'Question', ($modal, Question) ->
+
+  open: ->
+    $modal.open(
+      templateUrl: "<%= asset_path('app/templates/new_question.html') %>"
+      controller: 'NewQuestionCtrl'
+    )
+]

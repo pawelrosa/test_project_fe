@@ -6,7 +6,7 @@
           .pull-left
             h1.page-title
               | Questions
-            a.add-question-btn.add-button
+            a.add-question-btn.add-button ng-click="addQuestion()"
           form.filter-box.pull-right
             label.filter-box__label
               input.filter-box__radio type="radio" name="questionsFilter" value="true" ng-model="followed"

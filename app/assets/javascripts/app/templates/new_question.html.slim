@@ -1,0 +1,14 @@
+.modal-overlay
+  .modal.p-50
+    a.modal-close-button ng-click="dismiss()"
+    h3.modal-title
+      | New question
+    form name="newQuestion" ng-submit="newQuestion.$valid && save()" novalidate=""
+      .input ng-class="{'has-error': !newQuestion.questionHead.$valid && newQuestion.$submitted}"
+        input.input-control type="text" name="questionHead" placeholder="Question" ng-model="questionHead" required=""
+      .input ng-class="{'has-error': !newQuestion.questionBody.$valid && newQuestion.$submitted}"
+        textarea.input-control name="questionBody" placeholder="Description" ng-model="questionBody" required=""
+      button.button.pull-left ng-click="dismiss()"
+        | Cancel
+      button.button.blue.pull-right type="submit"
+        | Save

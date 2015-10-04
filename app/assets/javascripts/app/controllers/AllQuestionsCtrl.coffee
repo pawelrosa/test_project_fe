@@ -1,6 +1,6 @@
 'use strict'
 
-@app.controller('AllQuestionsCtrl', ['$scope', '$filter', 'Question', ($scope, $filter, Question) ->
+@app.controller('AllQuestionsCtrl', ['$scope', '$filter', 'Question', 'newQuestionModal', ($scope, $filter, Question, newQuestionModal) ->
   $scope.orderProp = '-created_at'
   $scope.followed = ''
   $scope.questionsLimit = 5
@@ -30,4 +30,8 @@
     ,
       (error) -> console.log 'error', error
     )
+
+  $scope.addQuestion = ->
+    newQuestionModal.open($scope.questions)
+
 ])

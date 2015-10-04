@@ -28,6 +28,11 @@
   width: 10px;
 }
 
+.modal-title {
+  color: $text-color;
+  font: italic 700 18px/24px $serif;
+}
+
 @media screen and (max-width: $mobile-max) {
   .modal {
     left: 0;

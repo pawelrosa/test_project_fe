@@ -51,6 +51,17 @@ input[type="submit"] {
   &:hover {
     background: #e5e5e5;
   }
+
+  &.blue {
+    background: $text-blue;
+    border-color: $text-blue;
+    color: white;
+
+    &:hover {
+      background: white;
+      color: $text-blue;
+    }
+  }
 }
 
 @media screen and (max-width: $mobile-max) {
