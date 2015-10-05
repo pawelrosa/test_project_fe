@@ -48,6 +48,6 @@ class Api::V1::QuestionsController < Api::V1::BaseController
   end
 
   def question_params
-    params.require(:question).permit(:head, :body)
+    params.require(:question).permit(:head, :body, :author_id)
   end
 end

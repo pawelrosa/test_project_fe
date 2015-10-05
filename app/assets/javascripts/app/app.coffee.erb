@@ -4,6 +4,8 @@
     'ui.bootstrap'
 ])
 
+@app.constant 'authorId', 2
+
 @app.config ($stateProvider, $urlRouterProvider) ->
     $urlRouterProvider.otherwise '/questions'
     $stateProvider

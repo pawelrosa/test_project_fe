@@ -1,4 +1,4 @@
-@app.controller 'NewQuestionCtrl', ['$scope', '$modalInstance', 'Question', '$state', ($scope, $modalInstance, Question, $state) ->
+@app.controller 'NewQuestionCtrl', ['$scope', '$modalInstance', 'Question', '$state', 'authorId', ($scope, $modalInstance, Question, $state, authorId) ->
 
   $scope.dismiss = -> $scope.$dismiss()
 
@@ -7,6 +7,7 @@
       question:
         head: $scope.questionHead
         body: $scope.questionBody
+        author_id: authorId
     ).$promise.then(
       (data) ->
         $state.go('question', {id: data.response.id})
