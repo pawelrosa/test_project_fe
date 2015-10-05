@@ -1,5 +1,14 @@
 class Api::V1::AnswersController < Api::V1::BaseController
-  before_action :fetch_answer
+  before_action :fetch_answer, except: [:create]
+
+  def create
+    @answer = Answer.new(answer_params)
+    if @answer.save
+      expose @answer.question, serializer: QuestionSerializer
+    else
+      error! :invalid_resource, @answer.errors
+    end
+  end
 
   def upvote
     if @answer.increment!(:votes)
@@ -25,5 +34,9 @@ class Api::V1::AnswersController < Api::V1::BaseController
 
   def fetch_answer
     @answer = Answer.find(params[:id])
+  end
+
+  def answer_params
+    params.require(:answer).permit(:question_id, :parent_id, :author_id, :body)
   end
 end

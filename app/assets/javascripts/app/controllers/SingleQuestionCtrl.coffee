@@ -1,6 +1,6 @@
 'use strict'
 
-@app.controller('SingleQuestionCtrl', ['$scope', '$stateParams', 'Question', '$http', 'newQuestionModal', ($scope, $stateParams, Question, $http, newQuestionModal) ->
+@app.controller('SingleQuestionCtrl', ['$scope', '$stateParams', 'Question', '$http', 'newQuestionModal', 'newAnswerModal', 'authorId', ($scope, $stateParams, Question, $http, newQuestionModal, newAnswerModal, authorId) ->
 
   Question.get({id: $stateParams.id}).$promise.then(
     (data) ->
@@ -26,10 +26,12 @@
       when 'Answer' then url += "answers/#{item.id}/downvote"
       when 'Comment' then url += "answers/#{parent.id}/comments/#{item.id}/downvote"
     $http.put(url)
-    .success (data) -> $scope.question = data.response
-    .error (error) -> console.log 'error', error
+      .success (data) -> $scope.question = data.response
+      .error (error) -> console.log 'error', error
 
   $scope.addQuestion = ->
     newQuestionModal.open($scope.questions)
 
+  $scope.answer = ->
+    newAnswerModal.open($scope.question)
 ])

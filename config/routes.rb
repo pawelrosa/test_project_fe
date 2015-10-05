@@ -7,7 +7,7 @@ Rails.application.routes.draw do
       resources :questions, except: [:edit, :update, :delete] do
         put :upvote, on: :member
         put :downvote, on: :member
-        resources :answers, only: [:index] do
+        resources :answers, only: [:index, :create] do
           put :upvote, on: :member
           put :downvote, on: :member
           resources :comments, only: [] do

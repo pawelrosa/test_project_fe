@@ -41,7 +41,7 @@
                 .votes-buttons
                   a.votes-caret.up ng-click="upvote(question, 'Question')"
                   a.votes-caret.down ng-click="downvote(question, 'Question')"
-          a.button.activity-button
+          a.button.activity-button ng-click="answer()"
             | GIVE new answer
       .answers-counter
         span.number
